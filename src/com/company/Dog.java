@@ -22,5 +22,5 @@ public class Dog extends Animal {
         this.dogFood=random.nextInt(50);
     }
 
-    
+
 }
