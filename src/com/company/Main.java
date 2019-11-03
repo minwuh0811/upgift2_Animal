@@ -27,7 +27,6 @@ public class Main {
                     String name=JOptionPane.showInputDialog("Enter the name of the animal: ");
                     Animal animal = getRandomAnimal(name);
                     animalList(animal);
-                    System.out.println(animal);
                     break;
                 case "2":
                     Hub hub=new Hub();
@@ -182,6 +181,8 @@ public class Main {
         return parrots.get(0);
 
     }
+
+
 
     static public Elephant elephantBest(ArrayList<Elephant> elephants) {
         Collections.sort(elephants, new AnimalByComparetor());

@@ -24,6 +24,12 @@ public class Dog extends Animal {
         this.days=animal.days;
     }
 
+    public Dog (int age, int weight, int height) {
+        this.age=age;
+        this.weight=weight;
+        this.height=height;
+    }
+
     public void newChewToy(){
         this.chewToy=true;
     }
