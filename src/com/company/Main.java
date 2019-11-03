@@ -43,7 +43,7 @@ public class Main {
                                     if (dog.days%5==0) {
                                         dog.chewToy=false;}
                                     else {
-                                        dog.chewToy=true;}
+                                        dog.newChewToy();}
                                     System.out.println(dog);
                                 }
                             }
