@@ -3,31 +3,47 @@ package com.company;
 import java.util.Random;
 
 public class Dog extends Animal {
-    boolean chewToy;
-    int dogFood;
+    private boolean chewToy;
+    private int dogFood;
+
+    public boolean isChewToy() {
+        return chewToy;
+    }
+
+    public void setChewToy(boolean chewToy) {
+        this.chewToy = chewToy;
+    }
+
+    public int getDogFood() {
+        return dogFood;
+    }
+
+    public void setDogFood(int dogFood) {
+        this.dogFood = dogFood;
+    }
 
     public Dog() {
-        this.weight= randomOutput(1000,35000);
-        this.height=randomOutput(30,100);
-        this.age=randomOutput(1,15);
-        this.sound="WOWO";
+        setWeight(randomOutput(1000,35000));
+        setHeight(randomOutput(30,100));
+        setAge(randomOutput(1,15));
+        setSound("WOWO");
     }
 
     public Dog(Animal animal){
         moreDogFood();
-        this.age=animal.age;
-        this.weight=animal.weight;
-        this.height=animal.height;
-        this.sound=animal.sound;
-        this.eat=animal.eat;
-        this.name=animal.name;
-        this.days=animal.days;
+        setAge(animal.getAge());
+        setWeight(animal.getWeight());
+        setHeight(animal.getHeight());
+        setSound(animal.getSound());
+        setEat(animal.getEat());
+        setName(animal.getName());
+        setDays(animal.getDays());
     }
 
     public Dog (int age, int weight, int height) {
-        this.age=age;
-        this.weight=weight;
-        this.height=height;
+        setAge(age);
+        setWeight(weight);
+        setHeight(height);
     }
 
     public void newChewToy(){

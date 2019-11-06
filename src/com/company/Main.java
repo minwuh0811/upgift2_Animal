@@ -36,12 +36,12 @@ public class Main {
                             for (int n = 0; n < days; n++) {
                                 i.ageAdd();
                                 i.daysAdd();
-                                if (i.age > 15) {
+                                if (i.getAge() > 15) {
                                     dogList.remove(i);
                                 } else {
                                     Dog dog=eatFood(i);
-                                    if (dog.days%5==0) {
-                                        dog.chewToy=false;}
+                                    if (dog.getDays()%5==0) {
+                                        dog.setChewToy(false);}
                                     else {
                                         dog.newChewToy();}
                                     System.out.println(dog);
@@ -54,14 +54,14 @@ public class Main {
                             for (int n = 0; n < days; n++) {
                                 i.ageAdd();
                                 i.daysAdd();
-                                if (i.age > 70) {
+                                if (i.getAge() > 70) {
                                     elephantList.remove(i);
                                 } else {
                                     Elephant elephant=eatFood(i);
-                                    if (elephant.bathed==false){
+                                    if (elephant.isBathed()==false){
                                         elephant.bath();
                                     } else {
-                                        elephant.bathed=false;}
+                                        elephant.setBathed(false);}
                                     System.out.println(elephant);
                                 }
                             }
@@ -74,11 +74,11 @@ public class Main {
                             for (int n = 0; n < days; n++) {
                                 i.ageAdd();
                                 i.daysAdd();
-                                if (i.age > 95) {
+                                if (i.getAge() > 95) {
                                     parrotList.remove(i);
                                 } else {
                                     Parrot parrot=eatFood(i);
-                                    if (parrot.days% 2 ==0 || parrot.days%3==0) {
+                                    if (parrot.getAge()% 2 ==0 || parrot.getAge()%3==0) {
                                         parrot.fly();
                                     } else { parrot.land();}
                                     System.out.println(parrot);
@@ -91,11 +91,11 @@ public class Main {
 
                 case "3":
                     Dog bestDog=dogBest(dogList);
-                    System.out.println("The best one in Dog category is: " + bestDog.name + ".\n" );
+                    System.out.println("The best one in Dog category is: " + bestDog.getName() + ".\n" );
                     Parrot bestParrot=parrotBest(parrotList);
-                    System.out.println("The best one in Parrot category is: " + bestParrot.name +".\n");
+                    System.out.println("The best one in Parrot category is: " + bestParrot.getName() +".\n");
                     Elephant bestElephant=elephantBest(elephantList);
-                    System.out.println("The best one in Elephant category is: " + bestElephant.name + ".\n" );
+                    System.out.println("The best one in Elephant category is: " + bestElephant.getName() + ".\n" );
                     break;
                 case "4":
                     System.out.println("Exit!!");
@@ -145,7 +145,7 @@ public class Main {
 
     static public Dog eatFood(Dog dog){
             int eat=dog.randomOutput(23,42);
-            if (dog.dogFood<eat){
+            if (dog.getDogFood()<eat){
                 dog.moreDogFood();
             }
             dog.setEat(eat);
@@ -154,7 +154,7 @@ public class Main {
 
     static public Elephant eatFood(Elephant elephant){
         int eat=elephant.randomOutput(30,50);
-        if (elephant.bananas<eat){
+        if (elephant.getBananas()<eat){
             elephant.moreBananas();
         }
         elephant.setEat(eat);
@@ -163,7 +163,7 @@ public class Main {
 
     static public Parrot eatFood(Parrot parrot){
         int eat=parrot.randomOutput(7,12);
-        if (parrot.seeds<eat){
+        if (parrot.getSeeds()<eat){
             parrot.moreSeeds();
         }
         parrot.setEat(eat);

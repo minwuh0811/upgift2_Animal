@@ -3,33 +3,49 @@ package com.company;
 import java.util.Random;
 
 public class Parrot extends Animal {
-    boolean flying;
-    int seeds;
+    private boolean flying;
+    private int seeds;
+
+    public boolean isFlying() {
+        return flying;
+    }
+
+    public void setFlying(boolean flying) {
+        this.flying = flying;
+    }
+
+    public int getSeeds() {
+        return seeds;
+    }
+
+    public void setSeeds(int seeds) {
+        this.seeds = seeds;
+    }
 
     public Parrot() {
-        this.weight= randomOutput(500,4000);
-        this.height=randomOutput(50,200);
-        this.age=randomOutput(1,95);
-        this.sound="Yaya";
+        setWeight(randomOutput(500,4000));
+        setHeight(randomOutput(50,200));
+        setAge(randomOutput(1,95));
+        setSound("Yaya");
     }
 
     public Parrot(Animal animal){
         moreSeeds();
         this.flying=false;
-        this.age=animal.age;
-        this.weight=animal.weight;
-        this.height=animal.height;
-        this.sound=animal.sound;
-        this.eat=animal.eat;
-        this.name=animal.name;
-        this.days=animal.days;
+        setAge(animal.getAge());
+        setWeight(animal.getWeight());
+        setHeight(animal.getHeight());
+        setSound(animal.getSound());
+        setEat(animal.getEat());
+        setName(animal.getName());
+        setDays(animal.getDays());
     }
 
     public void fly(){
-        this.flying=true;
+        setFlying(true);
     }
     public void land() {
-        this.flying=false;
+        setFlying(false);
     }
 
     public void moreSeeds() {
@@ -40,14 +56,14 @@ public class Parrot extends Animal {
 
     @Override
     public String toString() {
-        return "The name of the animal: " + name + ".\n" +
-                "The sound of the animal: " + sound + ".\n" +
-                "The weight of the animal: " + weight + ".\n" +
-                "The height of the animal: " + height + ".\n" +
-                "The amount of food needs: " + eat + ".\n" +
-                "The age of the animal: " + age + ".\n" +
+        return "The name of the animal: " + getName() + ".\n" +
+                "The sound of the animal: " + getSound() + ".\n" +
+                "The weight of the animal: " + getWeight() + ".\n" +
+                "The height of the animal: " + getHeight() + ".\n" +
+                "The amount of food needs: " + getEat() + ".\n" +
+                "The age of the animal: " + getAge() + ".\n" +
                 "The seeds in the storage: " + seeds + ".\n" +
-                "The number of days: " + days + " passed.\n" +
+                "The number of days: " + getDays() + " passed.\n" +
                 "The fly statement is: " + flying + ".\n" ;
 
     }

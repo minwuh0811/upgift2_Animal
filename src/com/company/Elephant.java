@@ -3,27 +3,41 @@ package com.company;
 import java.util.Random;
 
 public class Elephant extends Animal {
-    int bananas ;
-    boolean bathed ;
-    int days;
-    static int day;
+    private int bananas ;
+    private boolean bathed ;
+
+    public int getBananas() {
+        return bananas;
+    }
+
+    public void setBananas(int bananas) {
+        this.bananas = bananas;
+    }
+
+    public boolean isBathed() {
+        return bathed;
+    }
+
+    public void setBathed(boolean bathed) {
+        this.bathed = bathed;
+    }
 
     public Elephant() {
-        this.weight= randomOutput(3000000,7000000);
-        this.height=randomOutput(200,400);
-        this.age=randomOutput(1,70);
-        this.sound="Ji";
+        setWeight(randomOutput(3000000,7000000));
+        setHeight(randomOutput(200,400));
+        setAge(randomOutput(1,70));
+        setSound("Ji");
     }
     public Elephant(Animal animal){
         moreBananas();
         this.bathed=false;
-        this.age=animal.age;
-        this.weight=animal.weight;
-        this.height=animal.height;
-        this.sound=animal.sound;
-        this.eat=animal.eat;
-        this.name=animal.name;
-        this.days=animal.days;
+        setAge(animal.getAge());
+        setWeight(animal.getWeight());
+        setHeight(animal.getHeight());
+        setSound(animal.getSound());
+        setEat(animal.getEat());
+        setName(animal.getName());
+        setDays(animal.getDays());
     }
 
 
@@ -37,14 +51,14 @@ public class Elephant extends Animal {
     }
     @Override
     public String toString() {
-        return "The name of the animal: " + name + ".\n" +
-                "The sound of the animal: " + sound + ".\n" +
-                "The weight of the animal: " + weight + ".\n" +
-                "The height of the animal: " + height + ".\n" +
-                "The amount of food needs: " + eat + ".\n" +
-                "The age of the animal: " + age + ".\n" +
+        return "The name of the animal: " + getName() + ".\n" +
+                "The sound of the animal: " + getSound() + ".\n" +
+                "The weight of the animal: " + getWeight() + ".\n" +
+                "The height of the animal: " + getHeight() + ".\n" +
+                "The amount of food needs: " + getEat() + ".\n" +
+                "The age of the animal: " + getAge() + ".\n" +
                 "The bananas in the storage: " + bananas + ".\n" +
-                "The number of days: " + days + " passed.\n" +
+                "The number of days: " + getDays() + " passed.\n" +
                 "The bath statement is: " + bathed + ".\n" ;
     }
 }

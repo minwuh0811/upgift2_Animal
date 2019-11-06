@@ -5,13 +5,61 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Animal {
 
-    String sound;
-    String name;
-    int weight; // Unit gram
-    int height; // Unit centimeter
-    int eat;
-    int age;
-    int days;
+    private String sound;
+    private String name;
+    private int weight; // Unit gram
+    private int height; // Unit centimeter
+    private int eat;
+    private int age;
+    private int days;
+
+    public String getSound() {
+        return sound;
+    }
+
+    public void setSound(String sound) {
+        this.sound = sound;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getEat() {
+        return eat;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }
 
     public void setName(String name) {
         this.name = name;
